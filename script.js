@@ -15,14 +15,40 @@ nav.querySelectorAll('a').forEach((link) => {
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-document.querySelector('.contact-form').addEventListener('submit', (event) => {
+document.querySelector('.contact-form').addEventListener('submit', async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const data = new FormData(form);
-  const subject = encodeURIComponent(`Pedido de assistência — ${data.get('equipamento')}`);
-  const body = encodeURIComponent(
-    `Nome: ${data.get('nome')}\nTelefone: ${data.get('telefone')}\nEmail: ${data.get('email') || 'Não indicado'}\nEquipamento: ${data.get('equipamento')}\n\nDescrição:\n${data.get('mensagem')}`
-  );
-  document.querySelector('.form-feedback').textContent = 'O seu pedido está pronto. Escolha o seu aplicativo de email para o enviar.';
-  window.location.href = `mailto:info@nsuporte.com?subject=${subject}&body=${body}`;
+  const feedback = document.querySelector('.form-feedback');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const payload = Object.fromEntries(data.entries());
+  payload._subject = `Pedido de assistência — ${payload.equipamento}`;
+  payload._replyto = payload.email || '';
+  payload._template = 'table';
+
+  submitButton.disabled = true;
+  feedback.textContent = 'A enviar o seu pedido…';
+
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/info@nsuporte.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+    const result = await response.json();
+
+    if (!response.ok || result.success !== 'true') {
+      throw new Error(result.message || 'Não foi possível enviar o pedido.');
+    }
+
+    form.reset();
+    feedback.textContent = 'Pedido enviado. Obrigado por contactar a NSuporte.';
+  } catch (error) {
+    feedback.textContent = 'Não foi possível enviar agora. Tente novamente ou escreva para info@nsuporte.com.';
+  } finally {
+    submitButton.disabled = false;
+  }
 });

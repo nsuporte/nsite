@@ -1,31 +1,30 @@
-# Nsuporte – O Seu Parceiro Tecnológico de Confiança.
+# NSUPORTE 🇲🇿
 
-Website institucional moderno da **Nsuporte – Soluções de TI**, desenvolvido para apresentar os serviços da empresa e converter visitantes em potenciais clientes.
+### Tecnologia que impulsiona o seu negócio.
 
-## 🚀 Sobre
+Somos uma empresa moçambicana de tecnologia dedicada ao desenvolvimento de soluções digitais, infra-estruturas informáticas, conectividade e segurança electrónica.
 
-A Nsuporte é uma empresa moçambicana especializada em soluções tecnológicas para empresas, hotéis, instituições de ensino, clínicas e organizações públicas e privadas.
+## O que fazemos
 
-Este projeto consiste numa landing page responsiva com foco em marketing, apresentação de serviços e geração de contactos.
+| Área | Serviços |
+|---|---|
+| Desenvolvimento | Websites, aplicações Web e sistemas de gestão |
+| Redes | Instalação e administração de redes informáticas |
+| Suporte | Assistência e manutenção informática |
+| Infra-estrutura | Servidores, Cloud e Backup |
+| Segurança | Videovigilância e segurança electrónica |
+| Conectividade | Fornecimento e instalação de Starlink |
 
----
+## A nossa abordagem
 
-## ✨ Funcionalidades
+- Soluções tecnológicas orientadas para resultados.
+- Desenvolvimento de sistemas adaptados às necessidades dos clientes.
+- Segurança, disponibilidade e fiabilidade.
+- Inovação e melhoria contínua.
 
-- Página única (One Page)
-- Layout totalmente responsivo
-- Banner principal
-- Sobre a empresa
-- Serviços
-- SEO básico
+## Contactos
 
----
+- Website: https://nsuporte.com
+- País: Moçambique
 
-## 🛠 Tecnologias
-
-- HTML5
-- CSS3
-
----
-
-## 📂 Estrutura do Projeto
+**NSUPORTE – Tecnologia que impulsiona o seu negócio.**
